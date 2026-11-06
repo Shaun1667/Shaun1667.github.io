@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press Start</title>
+<!-- Notion에 임베드하는 "누를 수 있는" 시작 버튼. Notion 그림 칸은 링크를 못 달아서 이 페이지를 끼워 넣는다.
+     칸 높이가 얼마든 가운데에 버튼이 오도록 바탕 전체를 도트 패널로 채운다. -->
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: #0d0b1a; overflow: hidden; }
+  a {
+    position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    text-decoration: none; cursor: pointer;
+    background:
+      radial-gradient(#3a3463 1.5px, transparent 1.6px) 0 0 / 24px 24px,
+      radial-gradient(60% 70% at 50% 50%, rgba(255, 210, 63, 0.12), transparent 70%),
+      #0d0b1a;
+  }
+  a::after {               /* 주사선 */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0 2px, transparent 2px 4px);
+  }
+  img { display: block; width: min(92%, 900px); height: auto; image-rendering: pixelated; transition: transform 0.08s steps(2), filter 0.08s; }
+  a:hover img { filter: brightness(1.08); transform: translateY(-2px); }
+  a:active img { transform: translate(3px, 3px); }
+  .hint {
+    font: 12px/1 ui-monospace, Consolas, monospace; letter-spacing: 0.12em; color: #ffd23f;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .hint { animation: none; } img { transition: none; } }
+</style>
+</head>
+<body>
+  <a href="https://shaun1667.github.io/" target="_blank" rel="noopener" aria-label="포트폴리오 사이트 열기">
+    <img src="start.png" alt="PRESS START — 포트폴리오 사이트 열기 (shaun1667.github.io)">
+    <span class="hint">▶ CLICK TO START</span>
+  </a>
+</body>
+</html>

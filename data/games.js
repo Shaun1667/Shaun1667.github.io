@@ -77,33 +77,91 @@ window.GAMES = [
   {
     id: "five-rivers",
     title: "다섯 개의 강",
-    genre: "FPS · 전쟁",
-    status: "",                          // TODO
-    type: "팀",                          // TODO 확인
-    period: "",                          // TODO
-    team: "",                            // TODO
-    role: "",                            // TODO
-    engine: "Unity",
-    theme: "#8fbf6a",
-    summary: "한 줄 소개를 써주세요.",     // TODO
-    tags: ["FPS"],
-    cover: "", preview: "", video: "",
-    myWork: [], problems: [], shots: [], links: []
+    genre: "1인칭 슈팅 · 서사 체험",
+    status: "지스타 시연 빌드",
+    type: "팀",
+    period: "2026.10.25 ~ 11.05",
+    team: "4인 팀",
+    role: "아트 · 애니메이션 파트",
+    engine: "Unity 6.3 · URP",
+    theme: "#d6b46a",
+    summary: "1950년 8월 다부동의 야간 방어전을 신병의 눈으로 겪는 1인칭 슈팅. 어두울 때 움직이고 조명탄이 밝아지면 엄폐 사격하며, 마지막에는 전사자의 이름과 편지를 읽는다. 지스타 관람객용 5~9분 체험 데모.",
+    tags: ["FPS", "서사", "팀 프로젝트", "지스타"],
+    cover: "games/five-rivers/cover.jpg",
+    preview: "",
+    video: "",
+    myWork: [
+      "아트 · 애니메이션 파트 브랜치 담당 — 요청서에 맞춰 회색 상자(그레이박스) 에셋을 실제 에셋으로 교체",
+      "캐릭터 모델 교체 — 국군 주인공 · 병사 · 학도병, 북한군 소총수",
+      "1인칭 팔 리깅, M1 소총 · 바주카 1인칭 동작(꺼내기 · 장전 · 발사 · 질주 · 보급)과 아군 · 적 3인칭 동작 등 애니메이션 20여 종",
+      "무기(M1 · 바주카 · 모신나강 · PPSh-41) · 소품 · T-34-85 전차 모델, 글꼴 · 타이틀 배경 · 편지지 텍스처",
+      "VFX 13종 — 총구 섬광, 조명탄, 흙 튐, 바주카 후폭풍 · 로켓 궤적, 전차 사격 · 피격 폭발 · 도탄 · 연기",
+      "캐릭터 애니메이터 연결, 큰 FBX 파일을 위한 Git LFS 설정"
+    ],
+    problems: [
+      {
+        title: "파트 브랜치에서 넣은 에셋이 병합 때 끊기는 문제",
+        problem: "회색 상자 에셋이 main에 있는 상태에서 아트 브랜치가 같은 에셋을 따로 추가하면, 병합할 때 같은 파일이 양쪽에 생기고 .meta의 GUID가 달라져 프리팹 연결이 끊긴다.",
+        solution: "에셋을 넣기 전에 main을 파트 브랜치로 먼저 병합해 회색 상자 파일과 .meta를 받고, 같은 이름으로 덮어쓰도록 했다. 파트 브랜치에서는 코드 · 씬 · 프리팹을 고치지 않고, 연결은 main에서만 한다.",
+        result: ""
+      }
+    ],
+    shots: [
+      "games/five-rivers/1.jpg", "games/five-rivers/2.jpg", "games/five-rivers/3.jpg",
+      "games/five-rivers/4.jpg", "games/five-rivers/5.jpg", "games/five-rivers/6.jpg",
+      "games/five-rivers/7.jpg"
+    ],
+    links: [
+      { label: "GitHub (팀 저장소)", url: "https://github.com/jinsu-lee-code/fiveriver" }
+    ]
   },
 
   {
     id: "iron-and-ink",
     title: "철과 묵",
-    genre: "액션 · 조선 스팀펑크",
-    status: "",
-    type: "팀",                          // TODO 확인
-    period: "", team: "", role: "",
-    engine: "Unity",
+    genre: "조선 스팀펑크 액션 · 보스전",
+    status: "시연 빌드",
+    type: "팀",
+    period: "2026.09.30 ~ 11.05",
+    team: "5인 팀",
+    role: "팀장 · 통합 · 플레이어 전투 연출 · 이펙트",
+    engine: "Unity 6.6 · URP · Cinemachine",
     theme: "#e0663f",
-    summary: "한 줄 소개를 써주세요.",
-    tags: ["액션"],
-    cover: "", preview: "", video: "",
-    myWork: [], problems: [], shots: [], links: []
+    summary: "1887년, 시간이 멈춘 한양. 증기통을 멘 무사가 환도와 화승총, 받아치기와 5초 시간 역행으로 폭주한 수신 현무를 잠재우는 3인칭 액션. 약 5분 분량의 시연 빌드.",
+    tags: ["액션", "보스전", "팀 프로젝트", "팀장"],
+    cover: "games/iron-and-ink/cover.jpg",
+    preview: "",
+    video: "",
+    myWork: [
+      "팀장 · 통합 브랜치 관리 — 팀원 브랜치를 병합 · 확인한 뒤 main에 반영 (팀에서 커밋이 가장 많음)",
+      "플레이어 근접 전투 — 환도 발도 · 납도, 받아치기 입력 · 판정 · 동심원 UI · 칼 패링 동작",
+      "받아치기 성공 시 종이 ↔ 먹 화면 반전과 충격파, 낮은 체력 화면, 사망 셰이더, 서리 효과",
+      "5초 시간 역행(되감기) 기능",
+      "메인 맵 연출 — 근정전 · 조명 · 후처리, 수묵 구름, NavMesh로 보스방까지 길 안내",
+      "인트로 시네머신 장면, 발자국 · 패링 사운드 연결",
+      "빌드 마무리 — 해상도 · 디버그 입력 정리, 시연 자동 조종 · 녹화 도구"
+    ],
+    problems: [
+      {
+        title: "5명이 같은 씬 · 같은 플레이어를 고칠 때 생기는 충돌",
+        problem: "여러 사람이 메인 씬과 공용 플레이어 프리팹을 동시에 고치면 병합 충돌이 나고 서로의 작업을 덮어쓰게 된다.",
+        solution: "흐름을 '각자 브랜치 → 통합 브랜치에서 병합 · 확인 → main 반영'으로 정하고 통합 브랜치를 관리했다. 공용 플레이어 프리팹은 작업하는 사람의 폴더로 옮겨 고치고 끝나면 되돌리는 방식으로 한 번에 한 사람만 고치게 했다.",
+        result: ""
+      },
+      {
+        title: "넓은 메인 맵의 로딩과 프레임",
+        problem: "궁궐 · 마을 소품이 많은 메인 맵은 정적 오브젝트와 메시 충돌체가 많아 로딩과 프레임이 무거웠다.",
+        solution: "정적 오브젝트를 MeshBaker로 구역별로 합치고 원본은 끄고, 정적 배칭을 켜고, 일부 메시 충돌체를 박스 충돌체로 바꾼 뒤 NavMesh를 다시 구웠다.",
+        result: ""
+      }
+    ],
+    shots: [
+      "games/iron-and-ink/1.jpg", "games/iron-and-ink/2.jpg", "games/iron-and-ink/3.jpg",
+      "games/iron-and-ink/4.jpg", "games/iron-and-ink/5.jpg"
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/Shaun1667/Project-SteamAttack" }
+    ]
   },
 
   {
@@ -122,18 +180,42 @@ window.GAMES = [
   },
 
   {
-    id: "dungeon",
-    title: "던전 프로젝트",               // TODO 정식 이름
-    genre: "턴제 · 로그라이크",
-    status: "",
-    type: "개인",                        // TODO 확인
-    period: "", team: "", role: "",
-    engine: "Unity",
+    id: "dungeon",                       // 주소가 바뀌지 않게 id는 그대로
+    title: "MoaDungeon",
+    genre: "턴제 마법 로그라이크",
+    status: "지스타 시연 빌드",
+    type: "개인",
+    period: "2026.05 ~",
+    team: "1인 개발",
+    role: "기획 · 프로그래밍 · 아트 연결",
+    engine: "Unity 6.6 · URP",
     theme: "#8f7cff",
-    summary: "한 줄 소개를 써주세요.",
-    tags: ["로그라이크"],
-    cover: "", preview: "", video: "",
-    myWork: [], problems: [], shots: [], links: []
+    summary: "속성과 상태가 맞물리는 턴제 마법 로그라이크. 물을 깔고 번개를 쏘듯 지형과 상태를 먼저 만들고 그 위에 마법을 얹으며 던전을 내려간다.",
+    tags: ["로그라이크", "턴제", "속성 반응", "테스트"],
+    cover: "games/dungeon/cover.jpg",
+    preview: "",
+    video: "",
+    myWork: [
+      "격자 기반 턴제 전투 — 한 번 행동 = 한 턴, 마나로 쓰는 속성 마법",
+      "속성 · 상태 · 지형 반응 — 젖음 + 번개 = 감전, 얼음 = 빙결 · 둔화 등",
+      "마법서와 마법 융합기로 같은 마법을 런마다 다르게 강화 · 변형하는 빌드",
+      "구역 5개의 층 구성, 구역 시작층 상점, 붉은 칸으로 공격을 예고하는 보스",
+      "명예의 전당, 개발자 디버그 창, 지스타 시연 모드(5층 보스에서 시연 완료)",
+      "규칙 코드를 EditMode 테스트 600여 개로 고정"
+    ],
+    problems: [
+      {
+        title: "그래픽 방향이 정해지기 전에 규칙부터 만들어야 했다",
+        problem: "고각도 2.5D로 갈지 2D 픽셀로 갈지 정해지지 않은 상태에서, 그래픽이 바뀔 때마다 전투 코드를 다시 짜면 개발이 멈춘다.",
+        solution: "전투 · 상태 · 지형 · 마나 규칙을 Transform · 카메라 · 물리 없이 격자 위의 순수 로직으로 만들고, 로직은 '(3,4)에 화염 생성' 같은 이벤트만 내보내게 했다. 화면 쪽이 그 이벤트를 3D 이펙트나 스프라이트로 바꾸고, 그림은 ID로만 참조한다.",
+        result: "그래픽을 바꿔도 규칙 코드와 테스트는 그대로 쓸 수 있다."
+      }
+    ],
+    shots: ["games/dungeon/1.jpg", "games/dungeon/2.jpg"],
+    links: [
+      { label: "GitHub", url: "https://github.com/Shaun1667/Project_M" },
+      { label: "itch.io", url: "https://namuletta.itch.io/narudungeon" }
+    ]
   },
 
   {

@@ -165,7 +165,10 @@
   }, { passive: false });
 
   // 상세에서 돌아오면 주소의 #id로 그 게임을 다시 고른다
-  const hashId = () => decodeURIComponent(location.hash.slice(1));
+  const hashId = () => {
+    const h = decodeURIComponent(location.hash.slice(1));
+    return (window.GAME_ALIASES || {})[h] || h;   // 예전 주소도 열리게
+  };
   index = -1;
   applyFilter(ALL, hashId());
   window.addEventListener("hashchange", () => {

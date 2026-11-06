@@ -3,7 +3,8 @@
   const games = window.GAMES || [];
   const $ = id => document.getElementById(id);
 
-  const id = new URLSearchParams(location.search).get("id");
+  const rawId = new URLSearchParams(location.search).get("id");
+  const id = (window.GAME_ALIASES || {})[rawId] || rawId;   // 예전 주소도 열리게
   const at = games.findIndex(g => g.id === id);
   const g = games[at];
   const body = $("body");

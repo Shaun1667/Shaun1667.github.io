@@ -24,6 +24,11 @@ window.PROFILE = {
   ]
 };
 
+// 게임 id를 바꿨을 때 예전 주소(#예전id, game.html?id=예전id)도 새 게임으로 열리게
+window.GAME_ALIASES = {
+  "iron-and-ink": "steam-and-ink"
+};
+
 window.GAMES = [
   {
     id: "moa-showdown",                 // 영문 · 숫자 · 하이픈. 주소에 쓰이므로 바꾸지 않기
@@ -117,8 +122,8 @@ window.GAMES = [
   },
 
   {
-    id: "iron-and-ink",
-    title: "철과 묵",
+    id: "steam-and-ink",
+    title: "Steam & Ink",
     genre: "조선 스팀펑크 액션 · 보스전",
     status: "시연 빌드",
     type: "팀",
@@ -127,9 +132,9 @@ window.GAMES = [
     role: "팀장 · 통합 · 플레이어 전투 연출 · 이펙트",
     engine: "Unity 6.6 · URP · Cinemachine",
     theme: "#e0663f",
-    summary: "1887년, 시간이 멈춘 한양. 증기통을 멘 무사가 환도와 화승총, 받아치기와 5초 시간 역행으로 폭주한 수신 현무를 잠재우는 3인칭 액션. 약 5분 분량의 시연 빌드.",
+    summary: "철과 묵 — 1887년, 시간이 멈춘 한양. 증기통을 멘 무사가 환도와 화승총, 받아치기와 5초 시간 역행으로 폭주한 수신 현무를 잠재우는 3인칭 액션. 약 20분 분량의 시연 빌드.",
     tags: ["액션", "보스전", "팀 프로젝트", "팀장"],
-    cover: "games/iron-and-ink/cover.jpg",
+    cover: "games/steam-and-ink/cover.jpg",
     preview: "",
     video: "",
     myWork: [
@@ -156,8 +161,8 @@ window.GAMES = [
       }
     ],
     shots: [
-      "games/iron-and-ink/1.jpg", "games/iron-and-ink/2.jpg", "games/iron-and-ink/3.jpg",
-      "games/iron-and-ink/4.jpg", "games/iron-and-ink/5.jpg"
+      "games/steam-and-ink/1.jpg", "games/steam-and-ink/2.jpg", "games/steam-and-ink/3.jpg",
+      "games/steam-and-ink/4.jpg", "games/steam-and-ink/5.jpg"
     ],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/Project-SteamAttack" }

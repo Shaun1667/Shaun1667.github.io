@@ -134,7 +134,7 @@ window.GAMES = [
     theme: "#e0663f",
     summary: "철과 묵 — 1887년, 시간이 멈춘 한양. 증기통을 멘 무사가 환도와 화승총, 받아치기와 5초 시간 역행으로 폭주한 수신 현무를 잠재우는 3인칭 액션. 약 20분 분량의 시연 빌드.",
     tags: ["액션", "보스전", "팀 프로젝트", "팀장"],
-    cover: "games/steam-and-ink/cover.jpg",
+    cover: "games/steam-and-ink/cover.jpg?v=2",
     preview: "",
     video: "",
     myWork: [

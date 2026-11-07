@@ -175,8 +175,11 @@ window.GAMES = [
     theme: "#f4a7c0",
     summary: "한 줄 소개를 써주세요.",
     tags: ["생활 시뮬레이션"],
-    cover: "", preview: "", video: "",
-    myWork: [], problems: [], shots: [], links: []
+    cover: "games/pogeunvillage/cover.jpg", preview: "", video: "",
+    coverPos: "50% 25%",
+    myWork: [], problems: [],
+    shots: ["games/pogeunvillage/1.jpg", "games/pogeunvillage/2.jpg", "games/pogeunvillage/3.jpg"],
+    links: []
   },
 
   {

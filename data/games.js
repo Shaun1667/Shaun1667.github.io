@@ -123,9 +123,9 @@ window.GAMES = [
 
   {
     id: "steam-and-ink",
-    title: "Steam & Ink",
+    title: "철과 묵",
     genre: "조선 스팀펑크 액션 · 보스전",
-    status: "시연 빌드",
+    status: "지스타 시연 빌드",
     type: "팀",
     period: "2026.09.30 ~ 11.05",
     team: "5인 팀",

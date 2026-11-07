@@ -46,11 +46,13 @@ window.Site = (function () {
       v.src = game.preview;
       v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
       if (filled(game.cover)) v.poster = game.cover;
+      if (filled(o.position)) v.style.objectPosition = o.position;
       return v;
     }
     if (filled(game.cover)) {
       const img = el("img", o.className);
       img.src = game.cover;
+      if (filled(o.position)) img.style.objectPosition = o.position;  // 잘리는 위치 조정 (coverPos · thumbPos)
       img.alt = game.title;
       img.loading = o.lazy ? "lazy" : "eager";
       return img;

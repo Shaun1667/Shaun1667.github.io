@@ -39,7 +39,7 @@
     heroMedia.appendChild(v);
     $("hero").classList.add("has-video");
   } else {
-    heroMedia.appendChild(media(g, { allowVideo: true }));
+    heroMedia.appendChild(media(g, { allowVideo: true, position: g.coverPos }));
   }
   $("status").textContent = g.status || "";
   $("title").textContent = g.title;

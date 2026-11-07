@@ -61,7 +61,7 @@
       slot.type = "button";
       slot.setAttribute("role", "option");
       const frame = el("div", "slot-frame");
-      frame.appendChild(media(g, { className: "slot-art", lazy: true }));
+      frame.appendChild(media(g, { className: "slot-art", lazy: true, position: g.thumbPos }));
       const info = el("div", "slot-info");
       info.appendChild(el("div", "slot-num", pad(i + 1)));
       info.appendChild(el("div", "slot-title", g.title));
@@ -92,7 +92,7 @@
     setAccent(g.theme);
     const screen = $("screen");
     $("screenMedia").textContent = "";
-    $("screenMedia").appendChild(media(g, { allowVideo: true }));
+    $("screenMedia").appendChild(media(g, { allowVideo: true, position: g.coverPos }));
     $("slotNo").textContent = "SLOT " + pad(i + 1) + " / " + pad(list.length);
     $("gameTitle").textContent = g.title;
     $("gameGenre").textContent = [g.genre, g.period].filter(filled).join("  ·  ");

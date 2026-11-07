@@ -27,12 +27,13 @@ window.PROFILE = {
 // 게임 id를 바꿨을 때 예전 주소(#예전id, game.html?id=예전id)도 새 게임으로 열리게
 window.GAME_ALIASES = {
   "iron-and-ink": "steam-and-ink",
-  "fortress": "tank-shooting"
+  "fortress": "tank-shooting",
+  "dungeon": "moadungeon"
 };
 
 window.GAMES = [
   {
-    id: "dungeon",                       // 주소가 바뀌지 않게 id는 그대로
+    id: "moadungeon",                    // 예전 주소(dungeon)는 GAME_ALIASES로 연결
     title: "MoaDungeon",
     genre: "턴제 마법 로그라이크",
     status: "지스타 시연 빌드",

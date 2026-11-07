@@ -31,93 +31,41 @@ window.GAME_ALIASES = {
 
 window.GAMES = [
   {
-    id: "moa-showdown",                 // 영문 · 숫자 · 하이픈. 주소에 쓰이므로 바꾸지 않기
-    title: "MoaShowdown",
-    genre: "8인 실시간 오토 배틀러",
-    status: "개발 중",                   // "개발 중" | "완성" | "출시" | "중단" 등 자유
-    type: "개인",                        // 필터 탭: "개인" | "팀" | "회사" | "학교"
-    period: "2026.11 ~",
-    team: "1인 개발",
-    role: "기획 · 프로그래밍 전체",
-    engine: "Unity 6 · URP · C#",
-    theme: "#ffb84d",                    // 이 게임을 고르면 화면 강조색이 이 색으로 바뀜
-    summary: "몬스터 팀을 3×2 격자에 배치해 8명이 동시에 겨루는 3D 오토 배틀러. 상점에서 몬스터를 사고 합쳐 팀을 키운다.",
-    tags: ["오토 배틀러", "온라인", "결정론적 전투", "테스트"],
-    cover: "",                           // 예: "games/moa-showdown/cover.jpg"
-    preview: "",                         // 고를 때 재생되는 짧은 영상, 예: "games/moa-showdown/preview.mp4"
-    video: "",                           // 상세 페이지 영상 (YouTube 주소 또는 mp4 경로)
-    myWork: [
-      "엔진과 분리된 전투 규칙 코드 — 고정 틱 · 정수 계산 · 시드 난수",
-      "상점 · 골드 · 3마리 합체 · 대기석 배치",
-      "8인 로비: 대진 · 공유 몬스터 풀 · 캐러셀 · PvE 라운드 · 봇",
-      "전투 기록을 시간에 맞춰 재생하는 3D 화면과 코드로 만드는 UI",
-      "수치는 데이터 에셋으로 분리, EditMode 테스트로 규칙 고정"
-    ],
-    problems: [
-      {
-        title: "8명이 전투를 각자 계산해도 결과가 같아야 했다",
-        problem: "온라인에서 전투 전체를 주고받으면 무겁고, 각자 계산하면 PC마다 결과가 어긋날 수 있다.",
-        solution: "전투 규칙을 엔진을 모르는 순수 C# 코드로 분리하고 float 대신 정수, 용도별 시드 난수, 고정 틱만 쓰도록 제한했다.",
-        result: "라운드마다 팀 정보만 주고받고, 같은 입력이면 어느 PC에서든 같은 전투가 나온다."
-      },
-      {
-        title: "공유 몬스터 풀에서 마리 수가 새지 않게",
-        problem: "8명이 같은 풀에서 사고 · 팔고 · 탈락하면 몬스터가 사라지거나 복제되는 버그가 생기기 쉽다.",
-        solution: "풀을 다루는 코드를 한 곳에 모으고 '풀 + 상점 + 보유 = 처음 총량' 규칙을 테스트로 고정했다.",
-        result: "상점 · 판매 · 탈락 · 캐러셀을 추가할 때마다 같은 테스트로 바로 확인한다."
-      },
-      {
-        title: "저장 형식이 바뀌어도 옛 데이터를 읽어야 했다",
-        problem: "팀 정보 형식은 온라인 계약이라, 필드를 바꾸면 옛 버전 데이터를 못 읽게 된다.",
-        solution: "형식에 버전 번호를 두고 읽을 때 한 단계씩 변환하도록 했으며, 옛 JSON 예시를 테스트에 남겨 지우지 않는다.",
-        result: "형식을 고쳐도 이전 버전 데이터가 계속 읽힌다."
-      }
-    ],
-    shots: [],                           // 예: ["games/moa-showdown/1.jpg", "games/moa-showdown/2.jpg"]
-    links: [
-      { label: "GitHub", url: "https://github.com/Shaun1667/MoaShowdown" }
-    ]
-  },
-
-  {
-    id: "five-rivers",
-    title: "다섯 개의 강",
-    genre: "1인칭 슈팅 · 서사 체험",
+    id: "dungeon",                       // 주소가 바뀌지 않게 id는 그대로
+    title: "MoaDungeon",
+    genre: "턴제 마법 로그라이크",
     status: "지스타 시연 빌드",
-    type: "팀",
-    period: "2026.10.25 ~ 11.05",
-    team: "4인 팀",
-    role: "아트 · 애니메이션 파트",
-    engine: "Unity 6.3 · URP",
-    theme: "#d6b46a",
-    summary: "1950년 8월 다부동의 야간 방어전을 신병의 눈으로 겪는 1인칭 슈팅. 어두울 때 움직이고 조명탄이 밝아지면 엄폐 사격하며, 마지막에는 전사자의 이름과 편지를 읽는다. 지스타 관람객용 5~9분 체험 데모.",
-    tags: ["FPS", "서사", "팀 프로젝트", "지스타"],
-    cover: "games/five-rivers/cover.jpg",
+    type: "개인",
+    period: "2026.05 ~",
+    team: "1인 개발",
+    role: "기획 · 프로그래밍 · 아트 연결",
+    engine: "Unity 6.6 · URP",
+    theme: "#8f7cff",
+    summary: "속성과 상태가 맞물리는 턴제 마법 로그라이크. 물을 깔고 번개를 쏘듯 지형과 상태를 먼저 만들고 그 위에 마법을 얹으며 던전을 내려간다.",
+    tags: ["로그라이크", "턴제", "속성 반응", "테스트"],
+    cover: "games/dungeon/cover.jpg",
     preview: "",
     video: "",
     myWork: [
-      "아트 · 애니메이션 파트 브랜치 담당 — 요청서에 맞춰 회색 상자(그레이박스) 에셋을 실제 에셋으로 교체",
-      "캐릭터 모델 교체 — 국군 주인공 · 병사 · 학도병, 북한군 소총수",
-      "1인칭 팔 리깅, M1 소총 · 바주카 1인칭 동작(꺼내기 · 장전 · 발사 · 질주 · 보급)과 아군 · 적 3인칭 동작 등 애니메이션 20여 종",
-      "무기(M1 · 바주카 · 모신나강 · PPSh-41) · 소품 · T-34-85 전차 모델, 글꼴 · 타이틀 배경 · 편지지 텍스처",
-      "VFX 13종 — 총구 섬광, 조명탄, 흙 튐, 바주카 후폭풍 · 로켓 궤적, 전차 사격 · 피격 폭발 · 도탄 · 연기",
-      "캐릭터 애니메이터 연결, 큰 FBX 파일을 위한 Git LFS 설정"
+      "격자 기반 턴제 전투 — 한 번 행동 = 한 턴, 마나로 쓰는 속성 마법",
+      "속성 · 상태 · 지형 반응 — 젖음 + 번개 = 감전, 얼음 = 빙결 · 둔화 등",
+      "마법서와 마법 융합기로 같은 마법을 런마다 다르게 강화 · 변형하는 빌드",
+      "구역 5개의 층 구성, 구역 시작층 상점, 붉은 칸으로 공격을 예고하는 보스",
+      "명예의 전당, 개발자 디버그 창, 지스타 시연 모드(5층 보스에서 시연 완료)",
+      "규칙 코드를 EditMode 테스트 600여 개로 고정"
     ],
     problems: [
       {
-        title: "파트 브랜치에서 넣은 에셋이 병합 때 끊기는 문제",
-        problem: "회색 상자 에셋이 main에 있는 상태에서 아트 브랜치가 같은 에셋을 따로 추가하면, 병합할 때 같은 파일이 양쪽에 생기고 .meta의 GUID가 달라져 프리팹 연결이 끊긴다.",
-        solution: "에셋을 넣기 전에 main을 파트 브랜치로 먼저 병합해 회색 상자 파일과 .meta를 받고, 같은 이름으로 덮어쓰도록 했다. 파트 브랜치에서는 코드 · 씬 · 프리팹을 고치지 않고, 연결은 main에서만 한다.",
-        result: ""
+        title: "그래픽 방향이 정해지기 전에 규칙부터 만들어야 했다",
+        problem: "고각도 2.5D로 갈지 2D 픽셀로 갈지 정해지지 않은 상태에서, 그래픽이 바뀔 때마다 전투 코드를 다시 짜면 개발이 멈춘다.",
+        solution: "전투 · 상태 · 지형 · 마나 규칙을 Transform · 카메라 · 물리 없이 격자 위의 순수 로직으로 만들고, 로직은 '(3,4)에 화염 생성' 같은 이벤트만 내보내게 했다. 화면 쪽이 그 이벤트를 3D 이펙트나 스프라이트로 바꾸고, 그림은 ID로만 참조한다.",
+        result: "그래픽을 바꿔도 규칙 코드와 테스트는 그대로 쓸 수 있다."
       }
     ],
-    shots: [
-      "games/five-rivers/1.jpg", "games/five-rivers/2.jpg", "games/five-rivers/3.jpg",
-      "games/five-rivers/4.jpg", "games/five-rivers/5.jpg", "games/five-rivers/6.jpg",
-      "games/five-rivers/7.jpg"
-    ],
+    shots: ["games/dungeon/1.jpg", "games/dungeon/2.jpg"],
     links: [
-      { label: "GitHub (팀 저장소)", url: "https://github.com/jinsu-lee-code/fiveriver" }
+      { label: "GitHub", url: "https://github.com/Shaun1667/Project_M" },
+      { label: "itch.io", url: "https://namuletta.itch.io/narudungeon" }
     ]
   },
 
@@ -172,6 +120,97 @@ window.GAMES = [
   },
 
   {
+    id: "five-rivers",
+    title: "다섯 개의 강",
+    genre: "1인칭 슈팅 · 서사 체험",
+    status: "지스타 시연 빌드",
+    type: "팀",
+    period: "2026.10.25 ~ 11.05",
+    team: "4인 팀",
+    role: "아트 · 애니메이션 파트",
+    engine: "Unity 6.3 · URP",
+    theme: "#d6b46a",
+    summary: "1950년 8월 다부동의 야간 방어전을 신병의 눈으로 겪는 1인칭 슈팅. 어두울 때 움직이고 조명탄이 밝아지면 엄폐 사격하며, 마지막에는 전사자의 이름과 편지를 읽는다. 지스타 관람객용 5~9분 체험 데모.",
+    tags: ["FPS", "서사", "팀 프로젝트", "지스타"],
+    cover: "games/five-rivers/cover.jpg",
+    preview: "",
+    video: "",
+    myWork: [
+      "아트 · 애니메이션 파트 브랜치 담당 — 요청서에 맞춰 회색 상자(그레이박스) 에셋을 실제 에셋으로 교체",
+      "캐릭터 모델 교체 — 국군 주인공 · 병사 · 학도병, 북한군 소총수",
+      "1인칭 팔 리깅, M1 소총 · 바주카 1인칭 동작(꺼내기 · 장전 · 발사 · 질주 · 보급)과 아군 · 적 3인칭 동작 등 애니메이션 20여 종",
+      "무기(M1 · 바주카 · 모신나강 · PPSh-41) · 소품 · T-34-85 전차 모델, 글꼴 · 타이틀 배경 · 편지지 텍스처",
+      "VFX 13종 — 총구 섬광, 조명탄, 흙 튐, 바주카 후폭풍 · 로켓 궤적, 전차 사격 · 피격 폭발 · 도탄 · 연기",
+      "캐릭터 애니메이터 연결, 큰 FBX 파일을 위한 Git LFS 설정"
+    ],
+    problems: [
+      {
+        title: "파트 브랜치에서 넣은 에셋이 병합 때 끊기는 문제",
+        problem: "회색 상자 에셋이 main에 있는 상태에서 아트 브랜치가 같은 에셋을 따로 추가하면, 병합할 때 같은 파일이 양쪽에 생기고 .meta의 GUID가 달라져 프리팹 연결이 끊긴다.",
+        solution: "에셋을 넣기 전에 main을 파트 브랜치로 먼저 병합해 회색 상자 파일과 .meta를 받고, 같은 이름으로 덮어쓰도록 했다. 파트 브랜치에서는 코드 · 씬 · 프리팹을 고치지 않고, 연결은 main에서만 한다.",
+        result: ""
+      }
+    ],
+    shots: [
+      "games/five-rivers/1.jpg", "games/five-rivers/2.jpg", "games/five-rivers/3.jpg",
+      "games/five-rivers/4.jpg", "games/five-rivers/5.jpg", "games/five-rivers/6.jpg",
+      "games/five-rivers/7.jpg"
+    ],
+    links: [
+      { label: "GitHub (팀 저장소)", url: "https://github.com/jinsu-lee-code/fiveriver" }
+    ]
+  },
+
+  {
+    id: "moa-showdown",                 // 영문 · 숫자 · 하이픈. 주소에 쓰이므로 바꾸지 않기
+    title: "MoaShowdown",
+    genre: "8인 실시간 오토 배틀러",
+    status: "개발 중",                   // "개발 중" | "완성" | "출시" | "중단" 등 자유
+    type: "개인",                        // 필터 탭: "개인" | "팀" | "회사" | "학교"
+    period: "2026.11 ~",
+    team: "1인 개발",
+    role: "기획 · 프로그래밍 전체",
+    engine: "Unity 6 · URP · C#",
+    theme: "#ffb84d",                    // 이 게임을 고르면 화면 강조색이 이 색으로 바뀜
+    summary: "몬스터 팀을 3×2 격자에 배치해 8명이 동시에 겨루는 3D 오토 배틀러. 상점에서 몬스터를 사고 합쳐 팀을 키운다.",
+    tags: ["오토 배틀러", "온라인", "결정론적 전투", "테스트"],
+    cover: "",                           // 예: "games/moa-showdown/cover.jpg"
+    preview: "",                         // 고를 때 재생되는 짧은 영상, 예: "games/moa-showdown/preview.mp4"
+    video: "",                           // 상세 페이지 영상 (YouTube 주소 또는 mp4 경로)
+    myWork: [
+      "엔진과 분리된 전투 규칙 코드 — 고정 틱 · 정수 계산 · 시드 난수",
+      "상점 · 골드 · 3마리 합체 · 대기석 배치",
+      "8인 로비: 대진 · 공유 몬스터 풀 · 캐러셀 · PvE 라운드 · 봇",
+      "전투 기록을 시간에 맞춰 재생하는 3D 화면과 코드로 만드는 UI",
+      "수치는 데이터 에셋으로 분리, EditMode 테스트로 규칙 고정"
+    ],
+    problems: [
+      {
+        title: "8명이 전투를 각자 계산해도 결과가 같아야 했다",
+        problem: "온라인에서 전투 전체를 주고받으면 무겁고, 각자 계산하면 PC마다 결과가 어긋날 수 있다.",
+        solution: "전투 규칙을 엔진을 모르는 순수 C# 코드로 분리하고 float 대신 정수, 용도별 시드 난수, 고정 틱만 쓰도록 제한했다.",
+        result: "라운드마다 팀 정보만 주고받고, 같은 입력이면 어느 PC에서든 같은 전투가 나온다."
+      },
+      {
+        title: "공유 몬스터 풀에서 마리 수가 새지 않게",
+        problem: "8명이 같은 풀에서 사고 · 팔고 · 탈락하면 몬스터가 사라지거나 복제되는 버그가 생기기 쉽다.",
+        solution: "풀을 다루는 코드를 한 곳에 모으고 '풀 + 상점 + 보유 = 처음 총량' 규칙을 테스트로 고정했다.",
+        result: "상점 · 판매 · 탈락 · 캐러셀을 추가할 때마다 같은 테스트로 바로 확인한다."
+      },
+      {
+        title: "저장 형식이 바뀌어도 옛 데이터를 읽어야 했다",
+        problem: "팀 정보 형식은 온라인 계약이라, 필드를 바꾸면 옛 버전 데이터를 못 읽게 된다.",
+        solution: "형식에 버전 번호를 두고 읽을 때 한 단계씩 변환하도록 했으며, 옛 JSON 예시를 테스트에 남겨 지우지 않는다.",
+        result: "형식을 고쳐도 이전 버전 데이터가 계속 읽힌다."
+      }
+    ],
+    shots: [],                           // 예: ["games/moa-showdown/1.jpg", "games/moa-showdown/2.jpg"]
+    links: [
+      { label: "GitHub", url: "https://github.com/Shaun1667/MoaShowdown" }
+    ]
+  },
+
+  {
     id: "cozy-village",
     title: "포근마을",
     genre: "힐링 · 생활 시뮬레이션",
@@ -184,45 +223,6 @@ window.GAMES = [
     tags: ["생활 시뮬레이션"],
     cover: "", preview: "", video: "",
     myWork: [], problems: [], shots: [], links: []
-  },
-
-  {
-    id: "dungeon",                       // 주소가 바뀌지 않게 id는 그대로
-    title: "MoaDungeon",
-    genre: "턴제 마법 로그라이크",
-    status: "지스타 시연 빌드",
-    type: "개인",
-    period: "2026.05 ~",
-    team: "1인 개발",
-    role: "기획 · 프로그래밍 · 아트 연결",
-    engine: "Unity 6.6 · URP",
-    theme: "#8f7cff",
-    summary: "속성과 상태가 맞물리는 턴제 마법 로그라이크. 물을 깔고 번개를 쏘듯 지형과 상태를 먼저 만들고 그 위에 마법을 얹으며 던전을 내려간다.",
-    tags: ["로그라이크", "턴제", "속성 반응", "테스트"],
-    cover: "games/dungeon/cover.jpg",
-    preview: "",
-    video: "",
-    myWork: [
-      "격자 기반 턴제 전투 — 한 번 행동 = 한 턴, 마나로 쓰는 속성 마법",
-      "속성 · 상태 · 지형 반응 — 젖음 + 번개 = 감전, 얼음 = 빙결 · 둔화 등",
-      "마법서와 마법 융합기로 같은 마법을 런마다 다르게 강화 · 변형하는 빌드",
-      "구역 5개의 층 구성, 구역 시작층 상점, 붉은 칸으로 공격을 예고하는 보스",
-      "명예의 전당, 개발자 디버그 창, 지스타 시연 모드(5층 보스에서 시연 완료)",
-      "규칙 코드를 EditMode 테스트 600여 개로 고정"
-    ],
-    problems: [
-      {
-        title: "그래픽 방향이 정해지기 전에 규칙부터 만들어야 했다",
-        problem: "고각도 2.5D로 갈지 2D 픽셀로 갈지 정해지지 않은 상태에서, 그래픽이 바뀔 때마다 전투 코드를 다시 짜면 개발이 멈춘다.",
-        solution: "전투 · 상태 · 지형 · 마나 규칙을 Transform · 카메라 · 물리 없이 격자 위의 순수 로직으로 만들고, 로직은 '(3,4)에 화염 생성' 같은 이벤트만 내보내게 했다. 화면 쪽이 그 이벤트를 3D 이펙트나 스프라이트로 바꾸고, 그림은 ID로만 참조한다.",
-        result: "그래픽을 바꿔도 규칙 코드와 테스트는 그대로 쓸 수 있다."
-      }
-    ],
-    shots: ["games/dungeon/1.jpg", "games/dungeon/2.jpg"],
-    links: [
-      { label: "GitHub", url: "https://github.com/Shaun1667/Project_M" },
-      { label: "itch.io", url: "https://namuletta.itch.io/narudungeon" }
-    ]
   },
 
   {

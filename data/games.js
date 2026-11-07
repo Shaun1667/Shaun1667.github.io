@@ -26,7 +26,8 @@ window.PROFILE = {
 
 // 게임 id를 바꿨을 때 예전 주소(#예전id, game.html?id=예전id)도 새 게임으로 열리게
 window.GAME_ALIASES = {
-  "iron-and-ink": "steam-and-ink"
+  "iron-and-ink": "steam-and-ink",
+  "fortress": "tank-shooting"
 };
 
 window.GAMES = [
@@ -262,8 +263,8 @@ window.GAMES = [
   },
 
   {
-    id: "fortress",
-    title: "Fortress",
+    id: "tank-shooting",
+    title: "TankShooting",
     genre: "턴제 포격 · 탱크 대전",
     status: "프로토타입",
     type: "개인",

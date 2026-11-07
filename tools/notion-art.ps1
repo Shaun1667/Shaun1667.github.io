@@ -225,7 +225,7 @@ Rect $g 11 27 5 1 $TEXT; Rect $g 13 25 1 5 $TEXT
 Rect $g 24 25 2 2 $YEL; Rect $g 28 28 2 2 $RED
 Save-Scaled $cv 8 "avatar.png"
 
-# ── 5. 게임 카드 (80×45 → ×4 = 320×180) ──
+# ── 5. 게임 카드 (80×45 → ×4 = 320×180, 번호 없음) ──
 for ($i = 0; $i -lt $games.Count; $i++) {
   $gm = $games[$i]
   $cv = New-Canvas 80 45 $INK; $g = $cv.G
@@ -258,8 +258,6 @@ for ($i = 0; $i -lt $games.Count; $i++) {
       KoText $g $gm.Title $tx 17 $light 12
     }
   }
-  $num = "{0:D2}" -f ($i + 1)
-  Rect $g 2 2 15 11 $INK
-  PixText $g $num 4 4 $gm.Theme 1
+  # 번호는 넣지 않는다 (순서가 바뀌어도 카드를 다시 만들 필요 없게)
   Save-Scaled $cv 4 ("card_" + $gm.Id + ".png")
 }

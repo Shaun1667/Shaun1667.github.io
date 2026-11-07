@@ -143,7 +143,7 @@ function Checker($g, [int]$x, [int]$y, [int]$w, [int]$h, $base, $tint, [int]$cel
 # ── 게임 목록 ──
 $js = Get-Content (Join-Path $Root "data/games.js") -Raw -Encoding UTF8
 $games = @([regex]::Matches($js, 'id:\s*"([^"]+)"[^\n]*\n\s*title:\s*"([^"]+)"[\s\S]*?theme:\s*"([^"]+)"[\s\S]*?cover:\s*"([^"]*)"') | ForEach-Object {
-  [pscustomobject]@{ Id = $_.Groups[1].Value; Title = $_.Groups[2].Value; Theme = (C $_.Groups[3].Value); Cover = $_.Groups[4].Value }
+  [pscustomobject]@{ Id = $_.Groups[1].Value; Title = $_.Groups[2].Value; Theme = (C $_.Groups[3].Value); Cover = ($_.Groups[4].Value -replace '\?.*$', '') }
 })
 "games: $($games.Count)"
 

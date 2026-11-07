@@ -28,7 +28,8 @@ window.PROFILE = {
 window.GAME_ALIASES = {
   "iron-and-ink": "steam-and-ink",
   "fortress": "tank-shooting",
-  "dungeon": "moadungeon"
+  "dungeon": "moadungeon",
+  "cozy-village": "pogeunvillage"
 };
 
 window.GAMES = [
@@ -164,8 +165,8 @@ window.GAMES = [
   },
 
   {
-    id: "cozy-village",
-    title: "포근마을",
+    id: "pogeunvillage",
+    title: "PogeunVillage",
     genre: "힐링 · 생활 시뮬레이션",
     status: "",
     type: "팀",                          // TODO 확인

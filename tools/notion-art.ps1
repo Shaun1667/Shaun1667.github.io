@@ -235,9 +235,23 @@ for ($i = 0; $i -lt $games.Count; $i++) {
   } else {
     Checker $g 2 2 76 41 $BG2 $gm.Theme 4
     $light = Mix $gm.Theme $TEXT 0.35
-    if ($gm.Title -match '^[\x20-\x7E]+$') {          # 영문 제목 = 도트 글꼴 (11글자까지 한 줄)
-      $tw = PixWidth $gm.Title 1; $tx = [int]((80 - $tw) / 2)
-      PixShadow $g $gm.Title $tx 20 $light 1
+    if ($gm.Title -match '^[\x20-\x7E]+$') {          # 영문 제목 = 도트 글꼴 (12글자까지 한 줄)
+      $lines = @($gm.Title)
+      if ((PixWidth $gm.Title 1) -gt 74) {            # 더 길면 가운데에 가까운 대문자 · 띄어쓰기 앞에서 두 줄로
+        $t = $gm.Title; $cut = -1
+        for ($k = 1; $k -lt $t.Length; $k++) {
+          if ([char]::IsUpper($t[$k]) -or $t[$k - 1] -eq ' ') {
+            if ($cut -lt 0 -or [Math]::Abs($k - $t.Length / 2) -lt [Math]::Abs($cut - $t.Length / 2)) { $cut = $k }
+          }
+        }
+        if ($cut -lt 0) { $cut = [int]($t.Length / 2) }
+        $lines = @($t.Substring(0, $cut).Trim(), $t.Substring($cut).Trim())
+      }
+      $ys = $(if ($lines.Count -eq 1) { @(20) } else { @(15, 24) })
+      for ($l = 0; $l -lt $lines.Count; $l++) {
+        $tw = PixWidth $lines[$l] 1; $tx = [int]((80 - $tw) / 2)
+        PixShadow $g $lines[$l] $tx $ys[$l] $light 1
+      }
     } else {                                          # 한글 제목 = 굴림 12px
       $tw = KoWidth $gm.Title 12; $tx = [int]((80 - $tw) / 2)
       KoText $g $gm.Title ($tx + 1) 18 $INK 12

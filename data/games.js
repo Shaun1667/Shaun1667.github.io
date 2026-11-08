@@ -39,7 +39,7 @@ window.GAMES = [
     genre: "턴제 마법 로그라이크",
     status: "지스타 시연 빌드",
     type: "개인",
-    period: "2026.05 ~",
+    period: "2026.05 ~ 11.06",
     team: "1인 개발",
     role: "기획 · 프로그래밍 · 아트 연결",
     engine: "Unity 6.6 · URP",
@@ -170,7 +170,7 @@ window.GAMES = [
     genre: "힐링 · 생활 시뮬레이션",
     status: "",
     type: "팀",                          // TODO 확인
-    period: "", team: "", role: "",
+    period: "2026.10.19 ~ 11.06", team: "", role: "",
     engine: "Unity",
     theme: "#f4a7c0",
     summary: "한 줄 소개를 써주세요.",
@@ -224,7 +224,7 @@ window.GAMES = [
     genre: "8인 실시간 오토 배틀러",
     status: "개발 중",                   // "개발 중" | "완성" | "출시" | "중단" 등 자유
     type: "개인",                        // 필터 탭: "개인" | "팀" | "회사" | "학교"
-    period: "2026.11 ~",
+    period: "2026.11.06",
     team: "1인 개발",
     role: "기획 · 프로그래밍 전체",
     engine: "Unity 6 · URP · C#",
@@ -334,7 +334,7 @@ window.GAMES = [
     genre: "해상 디펜스 · 대포 슈팅",
     status: "개발 초기",
     type: "개인",
-    period: "2026.09.21 ~",
+    period: "2026.09.21 ~ 10.02",
     team: "1인 개발",
     role: "기획 · 프로그래밍",
     engine: "Unity 6.6 · URP",

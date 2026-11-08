@@ -341,8 +341,9 @@ window.GAMES = [
     theme: "#3fb6e8",
     summary: "한 줄 소개를 써주세요.",     // TODO
     tags: ["바다"],
-    cover: "", preview: "", video: "",
-    myWork: [], problems: [], shots: [],
+    cover: "games/pirate-king/cover.jpg", preview: "", video: "",
+    myWork: [], problems: [],
+    shots: ["games/pirate-king/1.jpg", "games/pirate-king/2.jpg", "games/pirate-king/3.jpg"],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/PirateKing" }
     ]

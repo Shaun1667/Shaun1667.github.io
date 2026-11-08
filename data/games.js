@@ -280,7 +280,8 @@ window.GAMES = [
     theme: "#e0a84a",
     summary: "탱크가 번갈아 각도와 힘을 정해 포탄을 쏘는 턴제 포격 대전. 포탄이 떨어진 자리의 지형이 부서진다.",
     tags: ["턴제", "물리", "AI 상대"],
-    cover: "", preview: "", video: "",
+    cover: "games/tank-shooting/cover.jpg", preview: "", video: "",
+    coverPos: "50% 72%",
     myWork: [
       "포탄이 떨어지면 지형이 깎이는 파괴 지형",
       "탱크 4종(캐논 · 미사일 · 드릴러 · 바머)과 무기 3종 — 분열 · 연쇄 폭발 등 특수 동작 조합",
@@ -295,7 +296,7 @@ window.GAMES = [
         result: ""
       }
     ],
-    shots: [],
+    shots: ["games/tank-shooting/1.jpg", "games/tank-shooting/2.jpg", "games/tank-shooting/3.jpg"],
     links: []                            // GitHub 저장소가 비공개라 링크 없음
   },
 

@@ -331,18 +331,24 @@ window.GAMES = [
   {
     id: "pirate-king",
     title: "PirateKing",
-    genre: "해적 · 바다 (기획 중)",       // TODO 장르 확인
+    genre: "해상 디펜스 · 대포 슈팅",
     status: "개발 초기",
     type: "개인",
     period: "2026.09.21 ~",
     team: "1인 개발",
-    role: "",
+    role: "기획 · 프로그래밍",
     engine: "Unity 6.6 · URP",
     theme: "#3fb6e8",
-    summary: "한 줄 소개를 써주세요.",     // TODO
-    tags: ["바다"],
+    summary: "내 배의 대포로 바다에서 몰려오는 폭탄 배 · 상어 · 해적선 · 유령선을 클릭해 맞히는 5라운드 해상 디펜스. 게임 제목은 '내 꿈은 해적왕'.",
+    tags: ["바다", "대포", "웨이브"],
     cover: "games/pirate-king/cover.jpg", preview: "", video: "",
-    myWork: [], problems: [],
+    myWork: [
+      "클릭한 바다 · 적 위치에 정확히 떨어지는 포탄 궤적 계산 — 수평 속도는 고정, 먼 거리는 최대 비행 시간으로 제한",
+      "적 종류별 움직임(다가오기 · 좌우 순찰 · 멈춰서 공격)과 스폰 영역, 해적선 · 유령선의 역사격",
+      "5라운드 웨이브 진행과 점수 — 격침하면 가점, 적에게 닿거나 포탄에 맞으면 감점, 결과 화면",
+      "타이틀 · 일시정지 · 대포 재장전 게이지 UI, 물보라 · 폭발 이펙트와 효과음"
+    ],
+    problems: [],
     shots: ["games/pirate-king/1.jpg", "games/pirate-king/2.jpg", "games/pirate-king/3.jpg"],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/PirateKing" }

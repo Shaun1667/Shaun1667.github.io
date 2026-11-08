@@ -313,7 +313,8 @@ window.GAMES = [
     theme: "#ff5d73",
     summary: "정해진 경로를 따라 자동으로 나아가며, 조준과 방패로 몰려오는 적을 처치하는 레일 슈터. 마지막에 부위 파괴 보스가 나온다.",
     tags: ["슈팅", "보스전", "완성작"],
-    cover: "", preview: "", video: "",
+    cover: "games/last-striker/cover.jpg", preview: "", video: "",
+    coverPos: "50% 30%",
     myWork: [
       "레일 카메라 · 자동 이동, 조준 · 사격 · 방패 · 수류탄",
       "적 13종 — 저격수 · 돌격 · 자폭 드론 · 방패병 · 수리병 · 지휘관 등, 머리 · 약점 판정",
@@ -321,7 +322,7 @@ window.GAMES = [
       "웨이브 · 스테이지 진행, 점수, 타이틀 · 일시정지 · 이어하기 · 엔딩 · 결과 화면"
     ],
     problems: [],                        // TODO
-    shots: [],
+    shots: ["games/last-striker/1.jpg", "games/last-striker/2.jpg", "games/last-striker/3.jpg"],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/LastStriker" }
     ]

@@ -169,8 +169,8 @@ window.GAMES = [
     title: "PogeunVillage",
     genre: "힐링 · 생활 시뮬레이션",
     status: "",
-    type: "팀",                          // TODO 확인
-    period: "2026.10.19 ~ 11.06", team: "", role: "",
+    type: "개인",
+    period: "2026.10.19 ~ 11.06", team: "1인 개발", role: "",
     engine: "Unity",
     theme: "#f4a7c0",
     summary: "한 줄 소개를 써주세요.",

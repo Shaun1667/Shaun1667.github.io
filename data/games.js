@@ -231,7 +231,7 @@ window.GAMES = [
     theme: "#ffb84d",                    // 이 게임을 고르면 화면 강조색이 이 색으로 바뀜
     summary: "몬스터 팀을 3×2 격자에 배치해 8명이 동시에 겨루는 3D 오토 배틀러. 상점에서 몬스터를 사고 합쳐 팀을 키운다.",
     tags: ["오토 배틀러", "온라인", "결정론적 전투", "테스트"],
-    cover: "",                           // 예: "games/moa-showdown/cover.jpg"
+    cover: "games/moa-showdown/cover.jpg",
     preview: "",                         // 고를 때 재생되는 짧은 영상, 예: "games/moa-showdown/preview.mp4"
     video: "",                           // 상세 페이지 영상 (YouTube 주소 또는 mp4 경로)
     myWork: [
@@ -261,7 +261,7 @@ window.GAMES = [
         result: "형식을 고쳐도 이전 버전 데이터가 계속 읽힌다."
       }
     ],
-    shots: [],                           // 예: ["games/moa-showdown/1.jpg", "games/moa-showdown/2.jpg"]
+    shots: ["games/moa-showdown/1.jpg", "games/moa-showdown/2.jpg", "games/moa-showdown/3.jpg", "games/moa-showdown/4.jpg", "games/moa-showdown/5.jpg"],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/MoaShowdown" }
     ]

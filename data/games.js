@@ -168,18 +168,64 @@ window.GAMES = [
     id: "pogeunvillage",
     title: "PogeunVillage",
     genre: "힐링 · 생활 시뮬레이션",
-    status: "",
+    status: "개발 중",
     type: "개인",
-    period: "2026.10.19 ~ 11.06", team: "1인 개발", role: "",
-    engine: "Unity",
+    period: "2026.10.19 ~ 11.09",
+    team: "1인 개발",
+    role: "기획 · 프로그래밍 · 아트 연결",
+    engine: "Unity 6 · URP · Input System · uGUI",
     theme: "#f4a7c0",
-    summary: "한 줄 소개를 써주세요.",
-    tags: ["생활 시뮬레이션"],
+    summary: "포근 마을 — 작은 둥근 행성 위 마을에서 동물 주민들과 친해지고, 채집 · 낚시 · 곤충 잡기로 모은 것으로 마을을 꾸미는 힐링 생활 게임. Windows 빌드까지 만들었고, 재미 검증과 소리 · 주민 대사 작업이 남아 있다.",
+    tags: ["힐링", "생활 시뮬레이션", "둥근 행성 셰이더", "테스트", "AI 3D 모델"],
     cover: "games/pogeunvillage/cover.jpg", preview: "", video: "",
     coverPos: "50% 25%",
-    myWork: [], problems: [],
-    shots: ["games/pogeunvillage/1.jpg", "games/pogeunvillage/2.jpg", "games/pogeunvillage/3.jpg"],
-    links: []
+    myWork: [
+      "기획서 · 수치표 작성 — 교류와 꾸미기 중심의 하루 루프, 게임 시간 하루 20분과 아침 처리 순서",
+      "화면에서만 휘는 둥근 행성 — 구면 휨 툰 셰이더(CurvedToon), 카메라를 가리는 물체의 디더링 반투명",
+      "주민 — 20명 중 6명으로 시작, 캠핑 방문 주민 이주(최대 12명), 대화 · 선물 · 친밀도 · 부탁, 괴롭히면 떠나기",
+      "도구 5종과 땅 칸 — 도끼 벌목, 삽 구멍 · 심기, 물뿌리개로 묘목 성장 · 꽃 번식, 도구 내구도",
+      "낚시 · 곤충 — 물고기 8종 입질 타이밍, 곤충 8종 살금살금 잡기, 도감, 수조 · 채집통으로 전시",
+      "가구 88종(기본 8 + 주민별 테마 80) 놓기 · 들기 · 제작 · 구매, 꾸밀수록 오르는 마을 평가(★1~5)와 해금",
+      "인트로 — 마을 화면이 아이 방 모니터였음이 드러나고, 화면 속으로 빨려 들어가 마을에 떨어지는 연출",
+      "세이브 — 자면 자동 저장(임시 파일 바꿔치기 · 백업), 이어하기 / 새로 시작 화면",
+      "3D 모델 186종(Varco3D) 적용, 플레이어와 주민 20명 Mixamo 리깅, 재생성 가능한 에디터 메뉴로 맵 · 모델 가져오기",
+      "규칙은 엔진과 분리한 순수 C#으로 작성 — EditMode 268개 + 가상 입력으로 씬을 조작하는 PlayMode 206개 테스트"
+    ],
+    problems: [
+      {
+        title: "둥근 행성처럼 보이면서 게임 규칙은 단순하게",
+        problem: "실제 구 위에 마을을 만들면 이동 · 충돌 · 땅 칸 계산이 모두 복잡해진다. 가구를 놓는 1m 격자도 구면에는 고르게 깔리지 않는다.",
+        solution: "월드는 평평하게 두고, 정점 셰이더가 그릴 때만 플레이어를 중심으로 구면으로 휘게 했다. 휨 때문에 화면 위쪽 지붕이 시야 밖으로 판정돼 사라지는 문제는 컬링 시야각을 넓혀 해결했고, 가져온 모델도 전부 같은 셰이더를 쓰게 했다.",
+        result: "이동 · 충돌 · 땅 칸은 평면 기준 그대로이고, 화면만 둥글게 보인다."
+      },
+      {
+        title: "저장했다가 이어 해도 다음 날이 똑같아야 했다",
+        problem: "마을 상태만 저장하면 이어 한 뒤에 난수 흐름이 달라져, 같은 저장에서 다른 다음 날이 나오고 버그도 재현하기 어렵다.",
+        solution: "난수를 상태를 저장할 수 있는 SeededRandom으로 바꾸고, 그날 아침 정해진 오늘의 테마 · 물고기 그림자 · 곤충과 난수 상태를 함께 저장했다.",
+        result: "'저장 → 불러와 진행'과 '저장 없이 진행'의 결과가 같은지 비교하는 왕복 테스트로 고정했다."
+      },
+      {
+        title: "손 흔드는 동작에서 손이 큰 머리에 파묻혔다",
+        problem: "주민들은 머리가 커서 Mixamo 손 흔들기 동작을 입히면 손이 머리 속으로 들어갔다.",
+        solution: "애니메이션이 끝난 뒤 LateUpdate에서 팔 뼈를 코드로 돌리고, 올리는 각도 · 흔드는 폭과 속도는 데이터로 뺐다. 귀가 함께 늘어나는 토끼 주민은 주민 데이터로 제외했다.",
+        result: "화면 밖에서 뼈 갱신이 멈춰 팔이 든 채로 남는 버그도 PlayMode 테스트가 잡아내, 손 흔드는 주민만 항상 애니메이션을 갱신하도록 고쳤다."
+      },
+      {
+        title: "AI로 만든 모델 186종을 일정한 규격으로 넣기",
+        problem: "모델마다 재질 · 크기를 손으로 맞추면 오래 걸리고, 재질 하나만 빠져도 그 물체는 휘지 않아 둥근 행성 연출이 깨진다.",
+        solution: "단위 · 피벗 · 정면 축 · 크기 기준을 규격 문서로 정하고, 여러 번 실행해도 결과가 같은 가져오기 메뉴가 휨 셰이더 재질과 모델 목록을 만들게 했다. 그레이박스의 기본 도형은 충돌용으로 남겼다.",
+        result: "충돌과 규칙을 그대로 둔 채 모델만 교체할 수 있었다."
+      }
+    ],
+    shots: [
+      "games/pogeunvillage/1.jpg", "games/pogeunvillage/2.jpg", "games/pogeunvillage/3.jpg",
+      "games/pogeunvillage/4.jpg", "games/pogeunvillage/5.jpg", "games/pogeunvillage/6.jpg",
+      "games/pogeunvillage/7.jpg", "games/pogeunvillage/8.jpg", "games/pogeunvillage/9.jpg",
+      "games/pogeunvillage/10.jpg", "games/pogeunvillage/11.jpg"
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/Shaun1667/PogeunVillage" }
+    ]
   },
 
   {

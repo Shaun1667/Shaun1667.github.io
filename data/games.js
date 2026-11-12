@@ -157,7 +157,8 @@ window.GAMES = [
     shots: [
       "games/five-rivers/1.jpg", "games/five-rivers/2.jpg", "games/five-rivers/3.jpg",
       "games/five-rivers/4.jpg", "games/five-rivers/5.jpg", "games/five-rivers/6.jpg",
-      "games/five-rivers/7.jpg"
+      "games/five-rivers/7.jpg", "games/five-rivers/8.jpg", "games/five-rivers/9.jpg",
+      "games/five-rivers/10.jpg"
     ],
     links: [
       { label: "GitHub (팀 저장소)", url: "https://github.com/jinsu-lee-code/fiveriver" }

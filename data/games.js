@@ -517,7 +517,7 @@ window.GAMES = [
     shots: ["games/solo-racing/1.jpg", "games/solo-racing/2.jpg", "games/solo-racing/3.jpg"],
     links: [
       { label: "itch.io", url: "https://namuletta.itch.io/soloracing" },
-      { label: "GitHub", url: "https://github.com/Shaun1667/SpeedCar" }
+      { label: "GitHub", url: "https://github.com/Shaun1667/SoloRacing" }
     ]
   }
 ];

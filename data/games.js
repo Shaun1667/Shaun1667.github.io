@@ -29,7 +29,8 @@ window.GAME_ALIASES = {
   "iron-and-ink": "steam-and-ink",
   "fortress": "tank-shooting",
   "dungeon": "moadungeon",
-  "cozy-village": "pogeunvillage"
+  "cozy-village": "pogeunvillage",
+  "speed-car": "solo-racing"
 };
 
 window.GAMES = [
@@ -486,8 +487,8 @@ window.GAMES = [
   },
 
   {
-    id: "speed-car",
-    title: "SpeedCar",
+    id: "solo-racing",                  // 예전 주소(speed-car)는 GAME_ALIASES로 연결
+    title: "SoloRacing",
     genre: "무한 주행 · 아케이드",
     status: "프로토타입",
     type: "개인",
@@ -498,7 +499,7 @@ window.GAMES = [
     theme: "#ffd23f",
     summary: "끝없이 이어지는 도로에서 점점 빨라지는 차를 몰며 다른 차들을 피하는 아케이드 주행 게임.",
     tags: ["레이싱", "무한 맵"],
-    cover: "games/speed-car/cover.jpg", preview: "", video: "",
+    cover: "games/solo-racing/cover.jpg", preview: "", video: "",
     coverPos: "50% 85%",
     myWork: [
       "도로 조각을 이어 붙여 끝없이 이어지는 도로",
@@ -513,8 +514,9 @@ window.GAMES = [
         result: "필요한 만큼만 도로를 만들면서 끝없이 달릴 수 있다."
       }
     ],
-    shots: ["games/speed-car/1.jpg", "games/speed-car/2.jpg", "games/speed-car/3.jpg"],
+    shots: ["games/solo-racing/1.jpg", "games/solo-racing/2.jpg", "games/solo-racing/3.jpg"],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/soloracing" },
       { label: "GitHub", url: "https://github.com/Shaun1667/SpeedCar" }
     ]
   }

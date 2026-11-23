@@ -163,6 +163,7 @@ window.GAMES = [
       "games/five-rivers/10.jpg"
     ],
     links: [
+      { label: "itch.io", url: "https://na-min-jea.itch.io/five-rivers-dabudong" },
       { label: "GitHub (팀 저장소)", url: "https://github.com/jinsu-lee-code/fiveriver" }
     ]
   },

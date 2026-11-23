@@ -13,7 +13,7 @@ window.PROFILE = {
   links: [
     { label: "GitHub", url: "https://github.com/Shaun1667" },
     { label: "Notion", url: "" },                // TODO 이력서용 Notion 공개 링크
-    { label: "itch.io", url: "" },
+    { label: "itch.io", url: "https://namuletta.itch.io/" },
     { label: "YouTube", url: "" }
   ],
   skills: [
@@ -68,7 +68,7 @@ window.GAMES = [
     shots: ["games/dungeon/1.jpg", "games/dungeon/2.jpg"],
     links: [
       { label: "GitHub", url: "https://github.com/Shaun1667/Project_M" },
-      { label: "itch.io", url: "https://namuletta.itch.io/narudungeon" }
+      { label: "itch.io", url: "https://namuletta.itch.io/moadungeon" }
     ]
   },
 
@@ -118,6 +118,7 @@ window.GAMES = [
       "games/steam-and-ink/4.jpg", "games/steam-and-ink/5.jpg"
     ],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/steamattack" },
       { label: "GitHub", url: "https://github.com/Shaun1667/Project-SteamAttack" }
     ]
   },
@@ -225,6 +226,7 @@ window.GAMES = [
       "games/pogeunvillage/10.jpg", "games/pogeunvillage/11.jpg"
     ],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/pogeunvillage" },
       { label: "GitHub", url: "https://github.com/Shaun1667/PogeunVillage" }
     ]
   },
@@ -261,6 +263,7 @@ window.GAMES = [
       "games/moa-world/7.jpg", "games/moa-world/8.jpg", "games/moa-world/9.jpg"
     ],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/moaworld" },
       { label: "GitHub", url: "https://github.com/Shaun1667/MoaWorld" }
     ]
   },
@@ -325,6 +328,7 @@ window.GAMES = [
     ],
     shots: ["games/moa-showdown/1.jpg", "games/moa-showdown/2.jpg", "games/moa-showdown/3.jpg", "games/moa-showdown/4.jpg", "games/moa-showdown/5.jpg"],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/moashowdown" },
       { label: "GitHub", url: "https://github.com/Shaun1667/MoaShowdown" }
     ]
   },
@@ -419,7 +423,9 @@ window.GAMES = [
       }
     ],
     shots: ["games/tank-shooting/1.jpg", "games/tank-shooting/2.jpg", "games/tank-shooting/3.jpg"],
-    links: []                            // GitHub 저장소가 비공개라 링크 없음
+    links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/tankshooter" }
+    ]                            // GitHub 저장소가 비공개라 링크 없음
   },
 
   {
@@ -446,6 +452,7 @@ window.GAMES = [
     problems: [],                        // TODO
     shots: ["games/last-striker/1.jpg", "games/last-striker/2.jpg", "games/last-striker/3.jpg"],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/laststriker" },
       { label: "GitHub", url: "https://github.com/Shaun1667/LastStriker" }
     ]
   },
@@ -473,6 +480,7 @@ window.GAMES = [
     problems: [],
     shots: ["games/pirate-king/1.jpg", "games/pirate-king/2.jpg", "games/pirate-king/3.jpg"],
     links: [
+      { label: "itch.io", url: "https://namuletta.itch.io/pirateking" },
       { label: "GitHub", url: "https://github.com/Shaun1667/PirateKing" }
     ]
   },

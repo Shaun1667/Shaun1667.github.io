@@ -181,7 +181,7 @@ window.GAMES = [
     theme: "#a3561a",
     summary: "탐험가 다람쥐가 뚫어뻥 하나를 쏘고 붙이고 흔들고 떼며 산 정상의 도토리 나무까지 오르는 3D 횡스크롤 클라이밍 게임. 체크포인트가 없고, 놓치거나 벽에 부딪혀 기절하면 몸이 그대로 산 아래로 떨어진다. 9층 지그재그 탑(213 m)을 VARCO 모델 · 사운드로 꾸며 타이틀 · 타이머 · 최고 기록 · 일시정지까지 Windows 빌드로 냈다.",
     tags: ["물리 로프", "레벨 디자인", "자동 등반 봇", "AI 3D 모델", "AI 사운드", "Mixamo"],
-    cover: "games/pop/cover.jpg",
+    cover: "games/pop/cover.jpg?v=20261124",
     thumbPos: "72% 50%",                // 썸네일에 다람쥐와 도토리 나무가 보이게
     preview: "",
     video: "",
@@ -215,7 +215,7 @@ window.GAMES = [
         result: "27개를 0.06~0.4초(징글 4~6초)로 줄여 이벤트마다 변형을 무작위로 쓴다."
       }
     ],
-    shots: ["games/pop/1.jpg", "games/pop/2.jpg", "games/pop/3.jpg", "games/pop/4.jpg", "games/pop/5.jpg"],
+    shots: ["games/pop/1.jpg?v=20261124", "games/pop/2.jpg?v=20261124", "games/pop/3.jpg?v=20261124", "games/pop/4.jpg?v=20261124", "games/pop/5.jpg?v=20261124"],
     links: [
       { label: "itch.io", url: "https://namuletta.itch.io/pop" },
       { label: "GitHub", url: "https://github.com/Shaun1667/Pop" }
